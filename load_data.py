@@ -34,9 +34,6 @@ class SentimentsData:
 
     def train_tst_split(self):
         self.data_train, self.data_test = train_test_split(self.data, test_size=0.3)
-        #self.data_train = self.data[self.data['Date'] < '2016-01-01']
-        #self.data_test  = self.data[self.data['Date'] > '2015-12-31']
-
 
     def load_glove(self):
         print("Loading GLOVE embeddings...")
@@ -69,7 +66,6 @@ class SentimentsData:
         label = []
         date = []
         for row in range(0,len(text.index)):
-            #all_news = CountVectorizer().build_tokenizer()(' '.join(str(x).lower() for x in text.iloc[row,:]))
             for x in text.iloc[row,2:27]:
                 x = str(x).lower()
                 label.append(text.iloc[row,1])
