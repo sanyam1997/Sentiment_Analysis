@@ -13,7 +13,7 @@ model.compile(loss='binary_crossentropy',
 
 model.summary()
 
-print("Get the data to predict on...")
+print("Getting the data to predict on...")
 sd = SentimentsData()
 print('Loading data...')
 (x_train, y_train), (x_test, y_test) = sd.load()
@@ -30,5 +30,5 @@ x_test = sequence.pad_sequences(x_test, maxlen=maxlen)
 print('Predict...')
 score, acc = model.evaluate(x_train, y_train,
                             batch_size=batch_size)
-print('Test score:', score)
-print('Test accuracy:', acc)
+print('Test Data Score:', score)
+print('Test Data Accuracy:', acc)
