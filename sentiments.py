@@ -21,7 +21,7 @@ def checkpoints():
 
 sd = SentimentsData()
 
-print('Loading data...')
+print('Loading training and testing data...')
 (x_train, y_train), (x_test, y_test) = sd.load()
 
 max_features = sd.corpus_size
@@ -31,9 +31,9 @@ sd.create_embeddings_matrix()
 
 print(len(x_train), 'train sequences')
 print(len(x_test), 'test sequences')
-print("Max features %i, Maxlen %i"%(max_features,maxlen))
+print("Maximum features %i, Maxlen %i"%(max_features,maxlen))
 
-print('Pad sequences (samples x time)')
+print('Padded sequences (samples x time)')
 x_train = sequence.pad_sequences(x_train, maxlen=maxlen)
 x_test = sequence.pad_sequences(x_test, maxlen=maxlen)
 print('x_train shape:', x_train.shape)
@@ -41,7 +41,7 @@ print('x_test shape:', x_test.shape)
 
 print(sd.embedding_matrix)
 
-print('Build model...')
+print('Building the model...')
 model = Sequential()
 model.add(Embedding(max_features+1, sd.EMBEDDING_DIM, weights=[sd.embedding_matrix], input_length=maxlen, trainable=True))
 model.add(LSTM(128, recurrent_dropout=0.4, return_sequences = True, dropout=0.2 ))
@@ -57,14 +57,14 @@ model.compile(loss='binary_crossentropy',
 
 model.summary()
 
-print('Train...')
+print('Training...')
 model.fit(x_train, y_train,
           batch_size=batch_size,
           epochs=15,
           validation_data=(x_test, y_test))
 score, acc = model.evaluate(x_test, y_test,
                             batch_size=batch_size)
-print('Test score:', score)
-print('Test accuracy:', acc)
+print('Testing Data Score:', score)
+print('Testing Data Accuracy:', acc)
 
 model.save("models/sentiments_full_glove_embeddings.hdf5")
