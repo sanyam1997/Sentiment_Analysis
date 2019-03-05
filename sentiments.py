@@ -4,7 +4,7 @@
 Market sentiment analysis on top news feeds data
 """
 
-from load_data_amz import SentimentsData
+from data_load_amz import SentimentsData
 from keras.preprocessing import sequence
 from keras.models import Sequential
 from keras.layers import Dense, Embedding, Dropout
