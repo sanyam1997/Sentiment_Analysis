@@ -34,7 +34,7 @@ model.fit(x_train, y_train,
           validation_data=(x_test, y_test))
 score, acc = model.evaluate(x_test, y_test,
                             batch_size=batch_size)
-print('Testing Data score:', score)
-print('Testing Data accuracy:', acc)
+print('Testing Data Score:', score)
+print('Testing Data Accuracy:', acc)
 
 model.save("models/sentiments_full_glove_embeddings_1.hdf5")
