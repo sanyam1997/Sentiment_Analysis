@@ -1,9 +1,9 @@
 # Sentiment Analysis
 
 This is a sentiments analysis example using LSTM( Long short-term memory ). I tried on 2 different datasets
-
-a. News sentiments on Dow Jones Index - https://www.kaggle.com/aaron7sun/stocknews  
-b. Amazon food review dataset - https://www.kaggle.com/snap/amazon-fine-food-reviews
+  
+a. Amazon food review dataset - https://www.kaggle.com/snap/amazon-fine-food-reviews
+b. News sentiments on Dow Jones Index - https://www.kaggle.com/aaron7sun/stocknews
 
 Amazon dataset is over 25Mb so it has to be downloaded from the link and should be placed in the amazon folder.
 
