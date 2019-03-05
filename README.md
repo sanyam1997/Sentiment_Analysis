@@ -5,6 +5,8 @@ This is a sentiments analysis example using LSTM( Long short-term memory ). I tr
 a. News sentiments on Dow Jones Index - https://www.kaggle.com/aaron7sun/stocknews  
 b. Amazon food review dataset - https://www.kaggle.com/snap/amazon-fine-food-reviews
 
+Amazon dataset is over 25Mb so it has to be downloaded from the link and should be placed in the amazon folder.
+
 Stock news dataset is small and all attempts to learn on such small dataset do not generalize. 
 The training accuracy gets up to 99% but the validation accuracy does not exceed 55%.
 
