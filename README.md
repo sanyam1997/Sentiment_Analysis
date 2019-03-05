@@ -1,6 +1,6 @@
 # Sentiment Analysis
 
-This is a sentiments analysis example using LSTM( Long short-term memory ). I tried 2 different datasets
+This is a sentiments analysis example using LSTM( Long short-term memory ). I tried on 2 different datasets
 
 a. News sentiments on Dow Jones Index - https://www.kaggle.com/aaron7sun/stocknews  
 b. Amazon food review dataset - https://www.kaggle.com/snap/amazon-fine-food-reviews
@@ -18,17 +18,17 @@ the accuracy drops to 82%.
 ## Files
 
 The following module loads the Stock news dataset
-> load_data.py
+> data_load.py
 
 The following module loads first 50k of the amazon dataset, it expects embeddings/glove.6B.100d.txt and amazon/Reviews.csv
 It considers 0 & 1 stars as negative reviews, removes 3 stars and considers 4 & 5 stars as positive reviews
-> load_data_amz.py
+> data_load_amz.py
 
 The following module trains the LSTM for sentiments analysis, 
 > sentiments.py
 
 The following module loads the last saved module and retrains it for more epochs.
-> retrain_sentiments.py
+> sentiments_retrain.py
 
 The following module loads the trained model and uses it to predict sentiments on a dataset. You would need to adjust the 
 dataset on which to train in the load_data_amz.py
