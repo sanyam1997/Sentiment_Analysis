@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from load_data_amz import SentimentsData
+from data_load_amz import SentimentsData
 from keras.models import load_model
 from keras.optimizers import Adam
 from keras.preprocessing import sequence
