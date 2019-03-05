@@ -79,7 +79,6 @@ class SentimentsData:
                 self.embedding_matrix[i] = embedding_vector # words not found in embedding index will be all-zeros.
         print(self.embedding_matrix.shape)
         print("Total Words %i Embeddings found = %i"%(i, fd))
-        #sys.stdin.readline()
 
     def score2label(self, label):
         if label > 3:
